@@ -23,7 +23,7 @@ $montant=isset( $_POST['montant']) ?$_POST['montant']:'1';
     <title>convertion dollars & francs</title>
 </head>
 <body>
-    <h1>Convertissez vos dollars en francs en quelque clics</h1>
+    <h1>Convertissez vos dollars en francs</h1>
     <hr>
    <form action="" method="post">
 
