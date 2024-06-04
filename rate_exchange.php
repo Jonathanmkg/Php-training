@@ -1,12 +1,12 @@
 <?php
 
 function convertdollarstofrancs($rate, $amount){
-    $result= $rate *$amount;
+    $result= $rate * $amount;
     return $result;
 }
 
 function convertfrancstodollars($rate, $amount){
-    $result= $amount/ $rate;
+    $result= $amount / $rate;
     return $result;
 }
 
@@ -25,21 +25,21 @@ $rate = $_POST["rate"] ?? null;
 <body>
    <h1>Rate exchange of dollars to francs congolais</h1>
    <form action="" method="post">
-        <input type="number" name="rate" placeholder= "insert the value 1$ in fc" required>
+        <input type="number" name="amount" placeholder= "insert the value 1$ in fc" required>
         <input type="text" name="rate" placeholder="insert the amount in fc" required>
         <button type="submit">convert</button>
    </form> 
 
-   <p>Your money in fc is </p>= convertdollarstofrancs($rate, $amount) ?> FC</p>
+   <p>Your money in fc is <?= convertdollarstofrancs($rate, $amount) ?> FC</p>
 
    <h1>exchange of francs to dollars</h1>
    <form action= "" method="post">
-        <input type="number" name="rate" placeholder= "insert the value 1$ in fc" required>
+        <input type="number" name="amount" placeholder= "insert the value 1$ in fc" required>
         <input type="text" name="rate" placeholder="insert the amount in fc" required>
         <button type="submit">convert</button>  
    </form>
 
-   <p>Your amount in dollars is :<?= $rate == 0 ? "division by zero" : number_format(convertdollarstofrancs($rate, $amount),1) ?> </p>
+   <p>Your amount in dollars is :<?= $rate == 0 ? "division by zero" : convertfrancstodollars($rate, $amount) ?> </p>
    
 </body>
 </html>
