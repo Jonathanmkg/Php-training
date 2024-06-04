@@ -22,8 +22,6 @@ if (isset($_POST['num1']) && isset($_POST['num2']) && isset($_POST['operator']))
             }
             break;
     }
-
-    echo "Result: " . $result;
 }
 ?>
 
@@ -33,7 +31,7 @@ if (isset($_POST['num1']) && isset($_POST['num2']) && isset($_POST['operator']))
     <title>PHP Calculator</title>
 </head>
 <body>
-    <h2>ITOTAFRICA Calculator</h2>
+    <h1>ITOTAFRICA Calculator</h1>
     <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
         <input type="number" name="num1" placeholder="Enter first number">
         <select name="operator">
@@ -45,5 +43,11 @@ if (isset($_POST['num1']) && isset($_POST['num2']) && isset($_POST['operator']))
         <input type="number" name="num2" placeholder="Enter second number">
         <input type="submit" value="Calculate">
     </form>
+    
+    <?php
+    if (isset($result)) {
+        echo "<h2>Result: $result</h2>";
+    }
+    ?>
 </body>
 </html>
